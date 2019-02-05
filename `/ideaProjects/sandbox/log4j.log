@@ -1,0 +1,13 @@
+2019-02-05 10:33:48 INFO  MicroBatchLoader:44 - begin
+2019-02-05 10:33:53 INFO  MicroBatchLoader:72 -  begin job 
+2019-02-05 10:33:53 INFO  MicroBatchLoader:73 -  -------------  Job Info   -------------
+2019-02-05 10:33:53 INFO  MicroBatchLoader:74 -  batch size:                  25
+2019-02-05 10:33:53 INFO  MicroBatchLoader:75 -  job size:                    500
+2019-02-05 10:33:53 INFO  MicroBatchLoader:76 -  ------------------------- -------------
+2019-02-05 10:33:53 INFO  MicroBatchLoader:163 -  -------------  Summary Totals   -------------
+2019-02-05 10:33:53 INFO  MicroBatchLoader:165 -  job elapsed:                 218ms
+2019-02-05 10:33:53 INFO  MicroBatchLoader:166 -  nodes created/merged:        500
+2019-02-05 10:33:53 INFO  MicroBatchLoader:167 -  relationships created/merged:500
+2019-02-05 10:33:53 INFO  MicroBatchLoader:168 -  batch size:                  25
+2019-02-05 10:33:53 INFO  MicroBatchLoader:169 -  number of batches:           19
+2019-02-05 10:33:53 INFO  MicroBatchLoader:171 -  average time per batch:      11ms
