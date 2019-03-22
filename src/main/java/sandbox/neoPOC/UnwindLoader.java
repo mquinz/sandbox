@@ -201,7 +201,7 @@ instead of generating these objects in single-item transactions, it collects the
                   */
 
                 HashMap<String, Object> hmNodeProps = new HashMap();
-                Integer nodeId = generator.nextInt(10000);
+                Integer nodeId = generator.nextInt(10000000);
                 long timeStamp = System.currentTimeMillis();
                 long atlasId = generator.nextInt(10000);
                 hmNodeProps.put("id", nodeId);
@@ -231,6 +231,19 @@ instead of generating these objects in single-item transactions, it collects the
                     tx.run(caseQuery, Collections.singletonMap("props", lNodeProps));
                     tx.success();  //
 
+                    /*
+                    The tx commit is wrapped in a repeatable try/catch loop in order
+                    to handle deadlocks.   The max number of retries is determined by
+                    the list of backoff entries.    These are progressively larger millisecond values.
+
+                      private static final int[] BACKOFF = {100, 200, 500, 1000, 5000, 10000};
+
+                     If a commit is successful, it will exit the loop.  Otherwise it will sleep
+                     a progressively longer duration before retrying.
+
+
+
+                     */
                     for (int i = 0; i < BACKOFF.length; i++) {
                         try {
                             tx.close();

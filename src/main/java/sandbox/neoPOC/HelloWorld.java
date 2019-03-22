@@ -9,7 +9,7 @@ public class HelloWorld implements AutoCloseable
 {
     private  Driver driver = null;
 
-    private  static int JOB_SIZE = 1000000;
+    private  static int JOB_SIZE = 10000000;
 
     private static Random generator = new Random();
 
